@@ -1,5 +1,5 @@
 # Punch-the-Barbarians
-How many times can you punch the barbarians in the game ? 
+How many times can you punch the barbarians in the game ? With jQuery
 
 
 Download the File.
