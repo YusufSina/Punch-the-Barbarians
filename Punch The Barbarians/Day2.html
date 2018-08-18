@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    var Score = 0;
+
+    $(".viking").click(function()
+    {
+    Score++;
+    });
+
+    $("#startbutton").click(function()
+    {
+      GameStart();
+    })
+
+
+    function Random()
+    {
+      var rndnmb = Math.floor(((Math.random()*10)%6)+1);
+      return rndnmb;
+    }
+
+    function RandomViking()
+    {
+      var rndnmb = Math.floor((Math.random()*1000));
+      while(rndnmb < 250)
+      {
+        rndnmb = Math.floor((Math.random()*1000));
+      }
+      return rndnmb;
+    }
+
+
+
+    function GameStop() {
+      alert(Score);
+      document.getElementById("hone").innerHTML = "Let's Play";
+      document.getElementById("startbutton").disabled = false;
+
+      Score = 0;
+      $("#div1").show();
+      $("#div2").show();
+      $("#div3").show();
+      $("#div4").show();
+      $("#div5").show();
+      $("#div6").show();
+
+    }
+
+    function GameStart(){
+      document.getElementById("hone").innerHTML = "You're Playing, Good Luck!";
+      document.getElementById("startbutton").disabled = true;
+
+      $("#div1").slideUp();
+      $("#div2").slideUp();
+      $("#div3").slideUp();
+      $("#div4").slideUp();
+      $("#div5").slideUp();
+      $("#div6").slideUp();
+
+
+
+
+      $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+        $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+          $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+            $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+              $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+                $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+                  $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+                    $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+                      $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+                        $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+                          $("#div"+Random()).slideDown(RandomViking()).slideUp(RandomViking(),function(){
+                            GameStop();
+                          });
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+
+
+    }
+
+
+});
+  </script>
+
+  <style>
+  body
+  {
+    text-align: center;
+  }
+  #div1,#div2,#div3,#div4,#div5,#div6
+  {
+    height:200px;
+    margin:10px;
+    width:200px;
+    position: absolute;
+
+  }
+  #div1
+  {
+    top: 50px;
+    left:0px;
+  }
+
+  #div2
+  {
+    top: 50px;
+    left:210px;
+  }
+
+  #div3
+  {
+    top: 50px;
+    left:420px;
+  }
+
+  #div4
+  {
+    top: 260px;
+    left:0px;
+  }
+
+  #div5
+  {
+    top: 260px;
+    left:210px;
+  }
+
+  #div6
+  {
+    top: 260px;
+    left:420px;
+  }
+
+
+
+  .Gdiv
+  {
+    position: absolute;
+    top: 30%;
+    left:25%;
+    text-align: center;
+  }
+
+  </style>
+
+</head>
+<body>
+
+  <h1 id="hone">START!</h1>
+  <h2 id="htwo">Punch the Barbarian ! </h2>
+  <h3 id="hthree"></h3>
+  <button type="button" id="startbutton">Start</button>
+
+  <div class="Gdiv">
+  <div id="div1">
+    <img class="viking" src="viking.png" height="200" width="200">
+  </div>
+  <div id="div2">
+    <img class="viking" src="viking.png" height="200" width="200">
+  </div>
+  <div id="div3">
+    <img class="viking" src="viking.png" height="200" width="200">
+  </div>
+  <div id="div4">
+    <img class="viking" src="viking.png" height="200" width="200">
+  </div>
+  <div id="div5">
+    <img class="viking" src="viking.png" height="200" width="200">
+  </div>
+  <div id="div6">
+    <img class="viking" src="viking.png" height="200" width="200">
+  </div>
+</div>
+
+
+
+
+  <script>
+
+  </script>
+
+</body>
+</html>
